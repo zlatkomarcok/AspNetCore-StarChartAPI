@@ -5,7 +5,7 @@ namespace StarChartTests
 {
     public static class TestHelpers
     {
-        private static readonly string _projectName = "GradeBook";
+        private static readonly string _projectName = "StarChart";
 
         public static Type GetUserType(string fullName)
         {
