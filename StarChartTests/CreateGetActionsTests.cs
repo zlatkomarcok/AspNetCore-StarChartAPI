@@ -17,16 +17,10 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                              from type in assembly.GetTypes()
-                              where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                              select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                              from type in assembly.GetTypes()
-                              where type.FullName == "StarChart.Models.CelestialObject"
-                              select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
 
             var item = Activator.CreateInstance(model);
             model.GetProperty("Id").SetValue(item, 1);
@@ -65,16 +59,10 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                              from type in assembly.GetTypes()
-                              where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                              select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
 
             var item = Activator.CreateInstance(model);
             model.GetProperty("Id").SetValue(item, 1);
@@ -115,16 +103,10 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                              from type in assembly.GetTypes()
-                              where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                              select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
 
             var item = Activator.CreateInstance(model);
             model.GetProperty("Id").SetValue(item, 1);

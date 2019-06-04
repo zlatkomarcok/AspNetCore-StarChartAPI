@@ -15,10 +15,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
         }
 
@@ -28,10 +25,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
             var idProperty = model.GetProperty("Id");
@@ -45,10 +39,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
             var nameProperty = model.GetProperty("Name");
@@ -63,10 +54,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
             var property = model.GetProperty("OrbitedObjectId");
@@ -80,10 +68,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
             var property = model.GetProperty("Satellites");
@@ -98,10 +83,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
             var property = model.GetProperty("OrbitalPeriod");
@@ -118,16 +100,10 @@ namespace StarChartTests
             filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
-            var model = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Models.CelestialObject"
-                         select type).FirstOrDefault();
+            var model = TestHelpers.GetUserType("StarChart.Models.CelestialObject");
             Assert.True(model != null, "A `public` class `CelestialObject` was not found in the `StarChart.Models` namespace.");
 
-            var context = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Data.ApplicationDbContext"
-                         select type).FirstOrDefault();
+            var context = TestHelpers.GetUserType("StarChart.Data.ApplicationDbContext");
             Assert.True(model != null, "A `public` class `ApplicationDbContext` was not found in the `StarChart.Data` namespace.");
 
             var property = context.GetProperty("CelestialObjects");
