@@ -18,10 +18,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                         select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
             Assert.True(controller.BaseType == typeof(ControllerBase), "A `public` class `CelestialObjectController` was found, but is not inheriting the `ControllerBase` class.");
         }
@@ -32,10 +29,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                         select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
             var routeAttribute = controller.GetCustomAttributes(typeof(RouteAttribute), false).FirstOrDefault() as RouteAttribute;
             Assert.True(routeAttribute != null && routeAttribute.Template == "", @"A `public` class `CelestialObjectController` was found, but didn't have a `Route` attribute with an argument of `""""`.");
@@ -48,10 +42,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                         select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
 
             var property = controller.GetField("_context", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -66,10 +57,7 @@ namespace StarChartTests
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Controllers" + Path.DirectorySeparatorChar + "CelestialObjectController.cs";
             Assert.True(File.Exists(filePath), "`CelestialObjectController.cs` was not found in the `Controllers` directory.");
 
-            var controller = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                         from type in assembly.GetTypes()
-                         where type.FullName == "StarChart.Controllers.CelestialObjectController"
-                         select type).FirstOrDefault();
+            var controller = TestHelpers.GetUserType("StarChart.Controllers.CelestialObjectController");
             Assert.True(controller != null, "A `public` class `CelestialObjectController` was not found in the `StarChart.Controllers` namespace.");
 
             var constructor = controller.GetConstructors().FirstOrDefault();
