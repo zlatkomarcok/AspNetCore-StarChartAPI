@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace StarChart.Models
 {
-    public class CelestialObjects
+    public class CelestialObject
     {
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         public int? OrbitedOjbectId { get; set; }
         [NotMapped]
-        public List<CelestialObjects> Satgellites { get; set; }
+        public List<CelestialObject> Satgellites { get; set; }
         public TimeSpan OrbitalPeriod { get; set; }
 
     }
